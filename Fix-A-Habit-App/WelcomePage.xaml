@@ -2,52 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fix_A_Habit_App.WelcomePage"
-             
+           
              Title="Welcome"
              
-             Shell.NavBarIsVisible="False" 
-             
-             BackgroundColor="{StaticResource AppPageBackground}">
-
     <Grid>
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#2C3E50" Offset="0.0"/>
+                <GradientStop Color="#4CA1AF" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <Image 
-            Source="{AppThemeBinding Dark=nebula_bg.jpg, Light=whale_sky_bg.jpg}" 
-            Aspect="AspectFill" 
-            Opacity="0.8"
-            ZIndex="-1" />
-        <VerticalStackLayout 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            Padding="30" 
-            Spacing="40">
+    <VerticalStackLayout>
 
-            <Label Text="WELCOME!" 
-                   FontSize="60" 
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   Style="{StaticResource LabelStyle}"/>
+        <!-- App Logo -->
+        <Image Source="logo.png"
+               WidthRequest="140" 
+               HeightRequest="140"
+               Opacity="0">
 
-            <Border 
-                WidthRequest="300" 
-                HeightRequest="200"
-                Style="{StaticResource GlassPanelStyle}" VerticalOptions="Center">
+        </Image>
 
-                <VerticalStackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- App Title -->
+        <Label Text="Fix Your Habits"
+        FontSize="32"
+        TextColor="White"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        Opacity="0">
+            <Label.Triggers>
 
-                    <Label Text="Start your journey to a better you." 
-                           FontSize="20"
-                           HorizontalOptions="Center"
-                           HorizontalTextAlignment="Center"/>
+            </Label.Triggers>
+        </Label>
 
-                    <Button Text="Get Started" 
-                            WidthRequest="200" 
-                            Clicked="StartApp" 
-                            HorizontalOptions="Center" />
+        <!-- Subtitle -->
+        <Label Text="Build routines • Track progress • Improve daily"
+               FontSize="14"
+                TextColor="White"
+                Opacity="0.8"
+                HorizontalOptions="Center"/>
+       
 
-                </VerticalStackLayout>
-            </Border>
-
-        </VerticalStackLayout>
+    </VerticalStackLayout>
     </Grid>
 </ContentPage>
