@@ -42,7 +42,7 @@
 
                     <Button Text="Get Started" 
                             WidthRequest="200" 
-                            Clicked="OnGetStartedClicked" 
+                            Clicked="StartApp" 
                             HorizontalOptions="Center" />
 
                 </VerticalStackLayout>
