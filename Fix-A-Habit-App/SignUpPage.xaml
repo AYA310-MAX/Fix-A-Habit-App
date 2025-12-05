@@ -1,12 +1,85 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fix_A_Habit_App.SignUpPage"
-             Title="SignUpPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="FixAHabitApp.Pages.SignUpPage"
+             BackgroundColor="#2D7A5F">
+
+	<ScrollView>
+		<Grid Padding="30" RowSpacing="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<!-- Header -->
+			<Label Grid.Row="0"
+                   Text="SIGN UP"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="0,40,0,20"/>
+
+			<!-- Form Fields -->
+			<StackLayout Grid.Row="1" Spacing="15">
+
+				<Entry Placeholder="Full Name"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       BackgroundColor="#3A8F6F"
+                       HeightRequest="50"/>
+
+				<Entry Placeholder="Email"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       Keyboard="Email"
+                       BackgroundColor="#3A8F6F"
+                       HeightRequest="50"/>
+
+				<Entry Placeholder="Password"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       IsPassword="True"
+                       BackgroundColor="#3A8F6F"
+                       HeightRequest="50"/>
+
+				<Entry Placeholder="Confirm Password"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       IsPassword="True"
+                       BackgroundColor="#3A8F6F"
+                       HeightRequest="50"/>
+
+				<Button Text="SIGN UP"
+                        BackgroundColor="White"
+                        TextColor="#2D7A5F"
+                        FontAttributes="Bold"
+                        CornerRadius="25"
+                        HeightRequest="50"
+                        Margin="0,20,0,0"
+                        Clicked="OnSignUpClicked"/>
+
+			</StackLayout>
+
+			<!-- Footer -->
+			<StackLayout Grid.Row="2"
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="5">
+				<Label Text="Already have an account?"
+                       TextColor="White"/>
+				<Label Text="Login"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       TextDecorations="Underline">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnLoginTapped"/>
+					</Label.GestureRecognizers>
+				</Label>
+			</StackLayout>
+
+		</Grid>
+	</ScrollView>
+
 </ContentPage>

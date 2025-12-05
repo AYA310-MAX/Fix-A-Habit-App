@@ -1,6 +1,7 @@
-﻿namespace Fix_A_Habit_App
-{
-    public partial class App : Application
+﻿namespace FixAHabitApp; 
+                        {
+
+public partial class App : Application
     {
         public App()
         {

@@ -1,53 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fix_A_Habit_App.WelcomePage"
-             
-             Title="Welcome"
-             
-             Shell.NavBarIsVisible="False" 
-             
-             BackgroundColor="{StaticResource AppPageBackground}">
+             x:Class="FixAHabitApp.Pages.WelcomePage"
+             BackgroundColor="#1B4D3E">
 
-    <Grid>
+	<Grid Padding="30">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="100"/>
+		</Grid.RowDefinitions>
 
-        <Image 
-            Source="{AppThemeBinding Dark=nebula_bg.jpg, Light=whale_sky_bg.jpg}" 
-            Aspect="AspectFill" 
-            Opacity="0.8"
-            ZIndex="-1" />
-        <VerticalStackLayout 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            Padding="30" 
-            Spacing="40">
+		<!-- Welcome Content -->
+		<StackLayout Grid.Row="0"
+                     VerticalOptions="Center"
+                     Spacing="20">
 
-            <Label Text="WELCOME!" 
-                   FontSize="60" 
+			<Label Text="WELCOME"
+                   FontSize="36"
                    FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+
+			<Label Text="Track your habits and achieve your goals"
+                   FontSize="16"
+                   TextColor="White"
                    HorizontalOptions="Center"
-                   Style="{StaticResource LabelStyle}"/>
+                   Opacity="0.8"/>
+		</StackLayout>
 
-            <Border 
-                WidthRequest="300" 
-                HeightRequest="200"
-                Style="{StaticResource GlassPanelStyle}" VerticalOptions="Center">
+		<!-- Get Started Button -->
+		<Button Grid.Row="2"
+                Text="GET STARTED"
+                BackgroundColor="White"
+                TextColor="#1B4D3E"
+                FontAttributes="Bold"
+                CornerRadius="25"
+                HeightRequest="50"
+                VerticalOptions="Center"
+                Clicked="OnGetStartedClicked"/>
+	</Grid>
 
-                <VerticalStackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
-
-                    <Label Text="Start your journey to a better you." 
-                           FontSize="20"
-                           HorizontalOptions="Center"
-                           HorizontalTextAlignment="Center"/>
-
-                    <Button Text="Get Started" 
-                            WidthRequest="200" 
-                            Clicked="StartApp" 
-                            HorizontalOptions="Center" />
-
-                </VerticalStackLayout>
-            </Border>
-
-        </VerticalStackLayout>
-    </Grid>
 </ContentPage>

@@ -1,12 +1,81 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fix_A_Habit_App.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="FixAHabitApp.Pages.LoginPage"
+             BackgroundColor="#1B4D3E">
+
+	<ScrollView>
+		<Grid Padding="30" RowSpacing="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<!-- Header -->
+			<Label Grid.Row="0"
+                   Text="LOGIN"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="0,60,0,40"/>
+
+			<!-- Form Fields -->
+			<StackLayout Grid.Row="1" Spacing="15">
+
+				<Entry Placeholder="Email"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       Keyboard="Email"
+                       BackgroundColor="#2A6350"
+                       HeightRequest="50"/>
+
+				<Entry Placeholder="Password"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       IsPassword="True"
+                       BackgroundColor="#2A6350"
+                       HeightRequest="50"/>
+
+				<Label Text="Forgot Password?"
+                       TextColor="White"
+                       HorizontalOptions="End"
+                       Margin="0,5,0,0">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+					</Label.GestureRecognizers>
+				</Label>
+
+				<Button Text="LOGIN"
+                        BackgroundColor="White"
+                        TextColor="#1B4D3E"
+                        FontAttributes="Bold"
+                        CornerRadius="25"
+                        HeightRequest="50"
+                        Margin="0,20,0,0"
+                        Clicked="OnLoginClicked"/>
+
+			</StackLayout>
+
+			<!-- Footer -->
+			<StackLayout Grid.Row="2"
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="5">
+				<Label Text="Don't have an account?"
+                       TextColor="White"/>
+				<Label Text="Sign Up"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       TextDecorations="Underline">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnSignUpTapped"/>
+					</Label.GestureRecognizers>
+				</Label>
+			</StackLayout>
+
+		</Grid>
+	</ScrollView>
+
 </ContentPage>

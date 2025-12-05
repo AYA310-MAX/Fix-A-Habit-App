@@ -1,12 +1,96 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fix_A_Habit_App.SettingsPage"
-             Title="SettingsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="FixAHabitApp.SettingsPage"
+             Title="Settings"
+             Shell.NavBarIsVisible="False" 
+             BackgroundColor="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <!-- 1. Dynamic Background Image Layer -->
+        <Image 
+            Source="{AppThemeBinding Dark='Dark Mode background..jpeg', Light='Light Mode background.jpg'}" 
+            Aspect="AspectFill" 
+            Opacity="0.8"
+            ZIndex="-1" />
+        
+        <!-- 2. Main Content ScrollView -->
+        <ScrollView>
+            <VerticalStackLayout Spacing="30" Padding="20, 50, 20, 20">
+
+                <Label Text="Settings"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0, 0, 0, 10"
+                       Style="{StaticResource LabelStyle}"/>
+
+                <!-- ============================================== -->
+                <!-- SECTION: GENERAL SETTINGS (TOGGLES) -->
+                <!-- ============================================== -->
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="General" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           Opacity="0.7"
+                           Style="{StaticResource LabelStyle}"/>
+
+                    <!-- Dark Mode Toggle Row -->
+                    <Border Style="{StaticResource GlassPanelStyle}">
+                        <Grid Padding="15, 10" ColumnDefinitions="*, Auto">
+                            <Label Grid.Column="0" Text="Dark Mode" 
+                                   VerticalOptions="Center" 
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Switch Grid.Column="1" 
+                                    Toggled="OnDarkModeToggled" 
+                                    IsToggled="True"
+                                    OnColor="{StaticResource AccentColor}"/>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Notifications Toggle Row -->
+                    <Border Style="{StaticResource GlassPanelStyle}">
+                        <Grid Padding="15, 10" ColumnDefinitions="*, Auto">
+                            <Label Grid.Column="0" Text="Notifications" 
+                                   VerticalOptions="Center" 
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Switch Grid.Column="1" 
+                                    IsToggled="True"
+                                    OnColor="{StaticResource AccentColor}"/>
+                        </Grid>
+                    </Border>
+                    
+                </VerticalStackLayout>
+                
+                <!-- ============================================== -->
+                <!-- SECTION: SUPPORT & ACCOUNT ACTIONS -->
+                <!-- ============================================== -->
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Support &amp; Account" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           Opacity="0.7"
+                           Style="{StaticResource LabelStyle}"/>
+
+                    <!-- Edit Profile Button -->
+                    <Button Text="Edit Profile"
+                            Style="{StaticResource SecondaryButtonStyle}" 
+                            HorizontalOptions="FillAndExpand" />
+
+                    <!-- Feedback Button -->
+                    <Button Text="Help &amp; Feedback"
+                            Style="{StaticResource SecondaryButtonStyle}" 
+                            HorizontalOptions="FillAndExpand" />
+
+                    <!-- Logout Button (Accented) -->
+                    <Button Text="Logout"
+                            Clicked="OnLogoutClicked"
+                            Style="{StaticResource DangerButtonStyle}" 
+                            HorizontalOptions="FillAndExpand"
+                            Margin="0, 30, 0, 0"/>
+                </VerticalStackLayout>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
