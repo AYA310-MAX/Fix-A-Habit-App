@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FixAHabitApp.Pages.WelcomePage"
-             BackgroundColor="#1B4D3E">
+             x:Class="HabitTrackerApp.WelcomePage"
+             BackgroundColor="#1a6b54">
 
-	<Grid Padding="30">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="100"/>
-		</Grid.RowDefinitions>
+    <VerticalStackLayout 
+        Padding="30"
+        Spacing="30"
+        VerticalOptions="Center">
 
-		<!-- Welcome Content -->
-		<StackLayout Grid.Row="0"
-                     VerticalOptions="Center"
-                     Spacing="20">
+        <!-- Welcome Title -->
+        <Label 
+            Text="WELCOME"
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalOptions="Center"/>
 
-			<Label Text="WELCOME"
-                   FontSize="36"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalOptions="Center"/>
+        <Label 
+            Text="Start your journey to better habits today"
+            FontSize="16"
+            TextColor="White"
+            Opacity="0.9"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"/>
 
-			<Label Text="Track your habits and achieve your goals"
-                   FontSize="16"
-                   TextColor="White"
-                   HorizontalOptions="Center"
-                   Opacity="0.8"/>
-		</StackLayout>
+        <!-- Get Started Button -->
+        <Button 
+            Text="GET STARTED"
+            BackgroundColor="#2d8a6e"
+            TextColor="White"
+            FontAttributes="Bold"
+            CornerRadius="25"
+            HeightRequest="50"
+            Margin="0,40,0,0"
+            Clicked="OnGetStartedClicked"/>
 
-		<!-- Get Started Button -->
-		<Button Grid.Row="2"
-                Text="GET STARTED"
-                BackgroundColor="White"
-                TextColor="#1B4D3E"
-                FontAttributes="Bold"
-                CornerRadius="25"
-                HeightRequest="50"
-                VerticalOptions="Center"
-                Clicked="OnGetStartedClicked"/>
-	</Grid>
+    </VerticalStackLayout>
 
 </ContentPage>

@@ -1,81 +1,76 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FixAHabitApp.Pages.LoginPage"
-             BackgroundColor="#1B4D3E">
+             x:Class="HabitTrackerApp.LoginPage"
+             BackgroundColor="#4da58c">
 
-	<ScrollView>
-		<Grid Padding="30" RowSpacing="20">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="30"
+            Spacing="20">
 
-			<!-- Header -->
-			<Label Grid.Row="0"
-                   Text="LOGIN"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalOptions="Center"
-                   Margin="0,60,0,40"/>
+            <Label 
+                Text="Login"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,60,0,30"/>
 
-			<!-- Form Fields -->
-			<StackLayout Grid.Row="1" Spacing="15">
+            <!-- Email Entry -->
+            <Entry 
+                Placeholder="Email"
+                PlaceholderColor="LightGray"
+                TextColor="White"
+                Keyboard="Email"
+                BackgroundColor="#3d8f76"
+                HeightRequest="50"/>
 
-				<Entry Placeholder="Email"
-                       PlaceholderColor="LightGray"
-                       TextColor="White"
-                       Keyboard="Email"
-                       BackgroundColor="#2A6350"
-                       HeightRequest="50"/>
+            <!-- Password Entry -->
+            <Entry 
+                Placeholder="Password"
+                PlaceholderColor="LightGray"
+                TextColor="White"
+                IsPassword="True"
+                BackgroundColor="#3d8f76"
+                HeightRequest="50"/>
 
-				<Entry Placeholder="Password"
-                       PlaceholderColor="LightGray"
-                       TextColor="White"
-                       IsPassword="True"
-                       BackgroundColor="#2A6350"
-                       HeightRequest="50"/>
+            <!-- Forgot Password -->
+            <Label 
+                Text="Forgot Password?"
+                TextColor="White"
+                HorizontalOptions="End"
+                TextDecorations="Underline"/>
 
-				<Label Text="Forgot Password?"
-                       TextColor="White"
-                       HorizontalOptions="End"
-                       Margin="0,5,0,0">
-					<Label.GestureRecognizers>
-						<TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
-					</Label.GestureRecognizers>
-				</Label>
+            <!-- Login Button -->
+            <Button 
+                Text="LOGIN"
+                BackgroundColor="#2d7a62"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="25"
+                HeightRequest="50"
+                Margin="0,20,0,0"
+                Clicked="OnLoginClicked"/>
 
-				<Button Text="LOGIN"
-                        BackgroundColor="White"
-                        TextColor="#1B4D3E"
-                        FontAttributes="Bold"
-                        CornerRadius="25"
-                        HeightRequest="50"
-                        Margin="0,20,0,0"
-                        Clicked="OnLoginClicked"/>
+            <!-- Sign Up Link -->
+            <HorizontalStackLayout 
+                HorizontalOptions="Center"
+                Margin="0,20,0,0">
+                <Label 
+                    Text="Don't have an account? "
+                    TextColor="White"/>
+                <Label 
+                    Text="Sign Up"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
 
-			</StackLayout>
-
-			<!-- Footer -->
-			<StackLayout Grid.Row="2"
-                        Orientation="Horizontal"
-                        HorizontalOptions="Center"
-                        Spacing="5">
-				<Label Text="Don't have an account?"
-                       TextColor="White"/>
-				<Label Text="Sign Up"
-                       TextColor="White"
-                       FontAttributes="Bold"
-                       TextDecorations="Underline">
-					<Label.GestureRecognizers>
-						<TapGestureRecognizer Tapped="OnSignUpTapped"/>
-					</Label.GestureRecognizers>
-				</Label>
-			</StackLayout>
-
-		</Grid>
-	</ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
