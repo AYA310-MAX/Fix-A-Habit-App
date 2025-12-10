@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTrackerApp.WelcomePage"
-             BackgroundColor="#1a6b54">
+             x:Class="Fix_A_Habit_App.WelcomePage"
+           
+             Title="Welcome"
+             
+    <Grid>
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#2C3E50" Offset="0.0"/>
+                <GradientStop Color="#4CA1AF" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-    <VerticalStackLayout 
-        Padding="30"
-        Spacing="30"
-        VerticalOptions="Center">
+    <VerticalStackLayout>
 
-        <!-- Welcome Title -->
-        <Label 
-            Text="WELCOME"
-            FontSize="32"
-            FontAttributes="Bold"
-            TextColor="White"
-            HorizontalOptions="Center"/>
+        <!-- App Logo -->
+        <Image Source="logo.png"
+               WidthRequest="140" 
+               HeightRequest="140"
+               Opacity="0">
 
-        <Label 
-            Text="Start your journey to better habits today"
-            FontSize="16"
-            TextColor="White"
-            Opacity="0.9"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="Center"/>
+        </Image>
 
-        <!-- Get Started Button -->
-        <Button 
-            Text="GET STARTED"
-            BackgroundColor="#2d8a6e"
-            TextColor="White"
-            FontAttributes="Bold"
-            CornerRadius="25"
-            HeightRequest="50"
-            Margin="0,40,0,0"
-            Clicked="OnGetStartedClicked"/>
+        <!-- App Title -->
+        <Label Text="Fix Your Habits"
+        FontSize="32"
+        TextColor="White"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        Opacity="0">
+            <Label.Triggers>
+
+            </Label.Triggers>
+        </Label>
+
+        <!-- Subtitle -->
+        <Label Text="Build routines • Track progress • Improve daily"
+               FontSize="14"
+                TextColor="White"
+                Opacity="0.8"
+                HorizontalOptions="Center"/>
+       
 
     </VerticalStackLayout>
-
+    </Grid>
 </ContentPage>

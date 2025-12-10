@@ -1,3 +1,7 @@
+
+using System;
+using Microsoft.Maui.Controls;
+
 namespace Fix_A_Habit_App;
 
 public partial class WelcomePage : ContentPage
@@ -5,6 +9,7 @@ public partial class WelcomePage : ContentPage
 	public WelcomePage()
 	{
         InitializeComponent();
+		
 	}
 
 	private void StartApp(object sender, EventArgs e)
