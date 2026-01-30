@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fix_A_Habit_App.UserProfilePage"
+             Title="Edit Profile">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Grid ColumnDefinitions="Auto, *, Auto">
+                <ImageButton Source="back_icon.png" Grid.Column="0" WidthRequest="25"/>
+                <Label Text="Edit Profile" Grid.Column="1" HorizontalOptions="Center" FontAttributes="Bold" FontSize="18"/>
+            </Grid>
+
+            <Grid HorizontalOptions="Center" Margin="0,20">
+                <Frame CornerRadius="60" HeightRequest="120" WidthRequest="120" Padding="0" IsClippedToBounds="True" BorderColor="LightGray">
+                    <Image Source="profile_avatar.png" Aspect="AspectFill"/>
+                </Frame>
+                <Frame CornerRadius="15" HeightRequest="30" WidthRequest="30" 
+                       BackgroundColor="#2962FF" Padding="0" 
+                       VerticalOptions="End" HorizontalOptions="End">
+                    <Image Source="edit_pen.png" Scale="0.6"/>
+                </Frame>
+            </Grid>
+
+            <VerticalStackLayout Spacing="15">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Name" Opacity="0.6" FontSize="12"/>
+                    <Entry Text="Jessica Jacobs" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Username" Opacity="0.6" FontSize="12"/>
+                    <Entry Text="Jesicaj_01" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Phone Number" Opacity="0.6" FontSize="12"/>
+                    <Entry Text="+27 65 552 5825" Keyboard="Telephone" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Email" Opacity="0.6" FontSize="12"/>
+                    <Entry Text="jessicajacobs08@gmail.com" Keyboard="Email" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Button Text="Save" 
+                    HeightRequest="50" 
+                    CornerRadius="10" 
+                    Margin="0,30,0,0" 
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
