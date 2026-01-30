@@ -1,77 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTrackerApp.SignUpPage"
-             BackgroundColor="#4da58c">
-
+             x:Class="Fix_A_Habit_App.SignUpPage">
     <ScrollView>
-        <VerticalStackLayout 
-            Padding="30"
-            Spacing="20">
-
-            <Label 
-                Text="Sign Up"
-                FontSize="32"
-                FontAttributes="Bold"
-                TextColor="White"
-                Margin="0,40,0,30"/>
-
-            <!-- Name Entry -->
-            <Entry 
-                Placeholder="Full Name"
-                PlaceholderColor="LightGray"
-                TextColor="White"
-                BackgroundColor="#3d8f76"
-                HeightRequest="50"/>
-
-            <!-- Email Entry -->
-            <Entry 
-                Placeholder="Email"
-                PlaceholderColor="LightGray"
-                TextColor="White"
-                Keyboard="Email"
-                BackgroundColor="#3d8f76"
-                HeightRequest="50"/>
-
-            <!-- Password Entry -->
-            <Entry 
-                Placeholder="Password"
-                PlaceholderColor="LightGray"
-                TextColor="White"
-                IsPassword="True"
-                BackgroundColor="#3d8f76"
-                HeightRequest="50"/>
-
-            <!-- Sign Up Button -->
-            <Button 
-                Text="SIGN UP"
-                BackgroundColor="#2d7a62"
-                TextColor="White"
-                FontAttributes="Bold"
-                CornerRadius="25"
-                HeightRequest="50"
-                Margin="0,20,0,0"
-                Clicked="OnSignUpClicked"/>
-
-            <!-- Login Link -->
-            <HorizontalStackLayout 
-                HorizontalOptions="Center"
-                Margin="0,20,0,0">
-                <Label 
-                    Text="Already have an account? "
-                    TextColor="White"/>
-                <Label 
-                    Text="Login"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    TextDecorations="Underline">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLoginTapped"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </HorizontalStackLayout>
-
+        <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+            <Label Text="SIGN UP" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,20"/>
+            <Entry Placeholder="Full Name" />
+            <Entry Placeholder="Email" Keyboard="Email" />
+            <Entry Placeholder="Password" IsPassword="True" />
+            <Entry Placeholder="Password Confirmation" IsPassword="True" />
+            <Button Text="Sign in" HeightRequest="50" CornerRadius="25" Margin="0,20,0,0"/>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
+    
