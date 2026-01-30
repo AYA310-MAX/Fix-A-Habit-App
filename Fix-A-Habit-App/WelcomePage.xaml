@@ -1,41 +1,51 @@
-<?xml version="1.0" encoding="utf-8" ?>
+        <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTrackerApp.WelcomePage"
              BackgroundColor="#1a6b54">
 
     <VerticalStackLayout 
-        Padding="30"
-        Spacing="30"
-        VerticalOptions="Center">
-
-        <!-- Welcome Title -->
-        <Label 
-            Text="WELCOME"
-            FontSize="32"
-            FontAttributes="Bold"
-            TextColor="White"
-            HorizontalOptions="Center"/>
+    Padding="30"
+    Spacing="20"
+    VerticalOptions="Center">
 
         <Label 
-            Text="Start your journey to better habits today"
-            FontSize="16"
-            TextColor="White"
-            Opacity="0.9"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="Center"/>
+        Text="WELCOME"
+        FontSize="32"
+        FontAttributes="Bold"
+        TextColor="White"
+        HorizontalOptions="Center"/>
 
-        <!-- Get Started Button -->
+        <Label 
+        Text="Choose up to 3 habits to track"
+        FontSize="16"
+        TextColor="White"
+        HorizontalOptions="Center"/>
+
+        <FlexLayout Wrap="Wrap" 
+                JustifyContent="Center" 
+                Margin="0,20">
+
+            <Button Text="Poor diet" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+            <Button Text="Excessive screen time" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+            <Button Text="Overspending" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+            <Button Text="Procrastination" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+            <Button Text="Smoking" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+
+        </FlexLayout>
+
+        <Label Text="Add More" 
+           TextColor="White" 
+           TextDecorations="Underline" 
+           HorizontalOptions="Center" />
+
         <Button 
-            Text="GET STARTED"
-            BackgroundColor="#2d8a6e"
-            TextColor="White"
-            FontAttributes="Bold"
-            CornerRadius="25"
-            HeightRequest="50"
-            Margin="0,40,0,0"
-            Clicked="OnGetStartedClicked"/>
+        Text="CREATE ACCOUNT"
+        TextColor="White"
+        FontAttributes="Bold"
+        CornerRadius="25"
+        HeightRequest="50"
+        Margin="0,40,0,0"/>
 
     </VerticalStackLayout>
-
 </ContentPage>
