@@ -1,51 +1,54 @@
-        <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTrackerApp.WelcomePage"
-             BackgroundColor="#1a6b54">
+             x:Class="Fix_A_Habit_App.WelcomePage"
+             Title="Welcome">
 
-    <VerticalStackLayout 
-    Padding="30"
-    Spacing="20"
-    VerticalOptions="Center">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#2C3E50" Offset="0.0"/>
+                <GradientStop Color="#4CA1AF" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <Label 
-        Text="WELCOME"
-        FontSize="32"
-        FontAttributes="Bold"
-        TextColor="White"
-        HorizontalOptions="Center"/>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
 
-        <Label 
-        Text="Choose up to 3 habits to track"
-        FontSize="16"
-        TextColor="White"
-        HorizontalOptions="Center"/>
+            <Label Text="WELCOME"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
 
-        <FlexLayout Wrap="Wrap" 
-                JustifyContent="Center" 
-                Margin="0,20">
+            <Label Text="Choose up to 3 habits to track"
+                   FontSize="16"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
 
-            <Button Text="Poor diet" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
-            <Button Text="Excessive screen time" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
-            <Button Text="Overspending" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
-            <Button Text="Procrastination" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
-            <Button Text="Smoking" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+            <FlexLayout Wrap="Wrap" 
+                        JustifyContent="Center" 
+                        Margin="0,20">
 
-        </FlexLayout>
+                <Button Text="Poor diet" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+                <Button Text="Excessive screen time" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+                <Button Text="Overspending" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+                <Button Text="Procrastination" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
+                <Button Text="Smoking" Margin="5" CornerRadius="15" HeightRequest="40" Padding="10,0"/>
 
-        <Label Text="Add More" 
-           TextColor="White" 
-           TextDecorations="Underline" 
-           HorizontalOptions="Center" />
+            </FlexLayout>
 
-        <Button 
-        Text="CREATE ACCOUNT"
-        TextColor="White"
-        FontAttributes="Bold"
-        CornerRadius="25"
-        HeightRequest="50"
-        Margin="0,40,0,0"/>
+            <Label Text="Add More" 
+                   TextColor="White" 
+                   TextDecorations="Underline" 
+                   HorizontalOptions="Center" />
 
-    </VerticalStackLayout>
+            <Button Text="CREATE ACCOUNT"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Margin="0,40,0,0"/>
+
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>
